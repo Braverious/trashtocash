@@ -151,7 +151,7 @@ class Log extends CI_Controller
         ];
 
         $sroot = $_SERVER['DOCUMENT_ROOT'];
-        include $sroot . "/recyloop/application/third_party/dompdf/autoload.inc.php";
+        include $sroot . "/trashtocash/application/third_party/dompdf/autoload.inc.php";
         $dompdf = new Dompdf\Dompdf();
 
         $html = $this->load->view("admin/log/pdf_withdraw", $data, TRUE);
@@ -192,7 +192,7 @@ class Log extends CI_Controller
         ];
 
         $sroot = $_SERVER['DOCUMENT_ROOT'];
-        include $sroot . "/recyloop/application/third_party/dompdf/autoload.inc.php";
+        include $sroot . "/trashtocash/application/third_party/dompdf/autoload.inc.php";
         $dompdf = new Dompdf\Dompdf();
 
         $html = $this->load->view("admin/log/pdf_transaction", $data, TRUE);
@@ -274,7 +274,7 @@ class Log extends CI_Controller
         ];
 
         $sroot = $_SERVER['DOCUMENT_ROOT'];
-        include $sroot . "/recyloop/application/third_party/dompdf/autoload.inc.php";
+        include $sroot . "/trashtocash/application/third_party/dompdf/autoload.inc.php";
         $dompdf = new Dompdf\Dompdf();
 
         $html = $this->load->view("admin/log/pdf_accounting", $data, TRUE);

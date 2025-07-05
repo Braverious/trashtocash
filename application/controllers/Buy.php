@@ -9,7 +9,7 @@ class Buy extends CI_Controller
 
     public function index()
     {
-        $data['judul'] = 'Recyloop.id';
+        $data['judul'] = 'TrashtoCash.id';
 
         $this->load->view('templates/home_header', $data);
         $this->load->view('home/buy/buy.php', $data);

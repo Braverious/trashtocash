@@ -15,7 +15,7 @@ class Member extends CI_Controller
     public function index()
     {
         $data = [
-            'judul'  => 'Recyloop - Penukaran Limbah Daur Ulang',
+            'judul'  => 'TrashtoCash - Penukaran Limbah Daur Ulang',
             'user'   => $this->db->get_where('user', ['username' => $this->session->userdata('username')])->row_array(),
             'limbah' => $this->LimbahModel->getLimbah(),
             'bp'     => $this->LimbahModel->getLimbahById(1),
@@ -108,7 +108,7 @@ class Member extends CI_Controller
         }
 
         $data = [
-            'judul' => 'Recyloop - Penukaran Limbah Daur Ulang',
+            'judul' => 'TrashtoCash - Penukaran Limbah Daur Ulang',
             'user' => $this->db->get_where('user', ['username' => $this->session->userdata('username')])->row_array(),
             'company' => $this->db->get('company')->result_array(),
             'review' => $formatted_reviews,
@@ -119,7 +119,7 @@ class Member extends CI_Controller
         $this->load->view('member/about/about-section1', $data);
         $this->load->view('member/about/about-section2', $data);
         $this->load->view('member/about/about-section3', $data);
-        $this->load->view('member/about/about-section4', $data);
+        // $this->load->view('member/about/about-section4', $data);
         $this->load->view('member/about/about-section5', $data);
         $this->load->view('member/about/about-section6', $data);
         $this->load->view('member/about/about-footer');

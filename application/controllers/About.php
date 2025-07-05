@@ -11,7 +11,7 @@ class About extends CI_Controller
     public function index()
     {
         $data = [
-            'judul' => 'Recyloop - Penukaran Limbah Daur Ulang',
+            'judul' => 'TrashtoCash - Penukaran Limbah Daur Ulang',
             'user' => $this->db->get_where('user', ['username' => $this->session->userdata('username')])->row_array(),
             'company' => $this->db->get('company')->result_array(),
             'review' => $this->MemberModel->getReview()

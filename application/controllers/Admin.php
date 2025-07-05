@@ -67,7 +67,7 @@ class Admin extends CI_Controller
             return;
         }
 
-        $config['base_url'] = 'http://localhost/recyloop/admin/staff/staff';
+        $config['base_url'] = 'http://localhost/trashtocash/admin/staff/staff';
         $config['total_rows'] = $this->UserModel->countAllStaff(2);
         $config['per_page'] = 5;
         $start = $this->uri->segment(4);

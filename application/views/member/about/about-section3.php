@@ -8,10 +8,10 @@
                     <div class="heading-title text-white">Dukungan Teknis 24 Jam</div>
                     <div class="heading-description text-white op-8">Kirim pesan kepada kami</div>
                 </div>
-                <p class="mb-3 op-8">Jika Anda memiliki pertanyaan, masalah, atau kendala terkait Recyloop, Anda
+                <p class="mb-3 op-8">Jika Anda memiliki pertanyaan, masalah, atau kendala terkait TrashtoCash, Anda
                     dapat menghubungi kami.</p>
-                <p class="tx-20 fw-500">Hubungi kami : <a href="https://wa.me/6285692726913?text=Halo%20Recyloop%" class="text-white me-1">0813-2800-0052</a> atau <a href="https://wa.me/6285692726913?text=Halo%20Recyloop%" class="text-white ms-1">0813-2800-0010</a></p>
-                <a href="https://wa.me/6285692726913?text=Halo%20Recyloop%" class="btn btn-lg btn-secondary">Hubungi Sekarang</a>
+                <p class="tx-20 fw-500">Hubungi kami : <a href="https://wa.me/6285692726913?text=Halo%20TrashtoCash%" class="text-white me-1">0813-2800-0052</a> atau <a href="https://wa.me/6285692726913?text=Halo%20Recyloop%" class="text-white ms-1">0813-2800-0010</a></p>
+                <a href="https://wa.me/6285692726913?text=Halo%20TrashtoCash%" class="btn btn-lg btn-secondary">Hubungi Sekarang</a>
             </div>
             <div class="col-lg-5">
                 <div class="text-center mt-5 mt-lg-0">

@@ -48,9 +48,9 @@ class Perusahaan extends CI_Controller
             $this->load->view("templates/admin/footer");
         } else {
             $dataInformasi = [
-                'nama' => 'Recyloop',
+                'nama' => 'TrashtoCash',
                 'img_logo' => 'main-logo.png',
-                'tagline' => '#Recyloop',
+                'tagline' => '#TrashtoCash',
                 'lokasi' => 'Krakatau',
                 'judul' => htmlspecialchars($this->input->post('judul')),
                 'deskripsi' => $this->input->post('deskripsi')
@@ -86,9 +86,9 @@ class Perusahaan extends CI_Controller
             $this->load->view("templates/admin/footer");
         } else {
             $dataInformasi = [
-                'nama' => 'Recyloop',
+                'nama' => 'TrashtoCash',
                 'img_logo' => 'main-logo.png',
-                'tagline' => '#Recyloop',
+                'tagline' => '#TrashtoCash',
                 'lokasi' => 'Krakatau',
                 'judul' => htmlspecialchars($this->input->post('judul')),
                 'deskripsi' => $this->input->post('deskripsi')

@@ -185,7 +185,7 @@ class Withdraw extends CI_Controller
         ];
 
         $sroot = $_SERVER['DOCUMENT_ROOT'];
-        include $sroot . "/recyloop/application/third_party/dompdf/autoload.inc.php";
+        include $sroot . "/trashtocash/application/third_party/dompdf/autoload.inc.php";
         $dompdf = new Dompdf\Dompdf();
 
         $html = $this->load->view('admin/withdraw/receipt', $data, TRUE);

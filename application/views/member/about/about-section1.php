@@ -18,12 +18,12 @@
                             <div class="col-lg-7">
                                 <div class="">
                                     <span class="mb-3 content-1 h5 text-white" style="font-weight: bold;">Kenali
-                                        <span class="tx-info-dark position-relative">Recyloop<span class="br-bottom-before"></span></span>
+                                        <span class="tx-info-dark position-relative">TrashtoCash<span class="br-bottom-before"></span></span>
                                     </span>
                                     <p class="mb-4 content-1"><span class="tx-info-dark position-relative"><b>R</b></span>ecycle <span class="tx-info-dark position-relative"><b>I</b></span>n <span class="tx-info-dark position-relative"><b>N</b></span>ature <span class="tx-info-dark position-relative"><b>O</b></span>ut </p>
                                     <ul class="list-unstyled mb-0">
                                         <li class="list-item mb-2"><a href="" class="footer-link text-white"><i class="bi bi-telephone me-3 tx-18 text-white"></i>0858 9272 6913</a></li>
-                                        <li class="list-item mb-2"><a href="" class="footer-link text-white"><i class="bi bi-envelope-plus me-3 tx-18 text-white"></i>recyloop@company.com</a></li>
+                                        <li class="list-item mb-2"><a href="" class="footer-link text-white"><i class="bi bi-envelope-plus me-3 tx-18 text-white"></i>trashtocash@company.com</a></li>
                                         <li class="list-item"><a href="" class="footer-link text-white"><i class="bi bi-geo-alt me-3 tx-18 text-white"></i>Tangerang Selatan, Banten </a></li>
                                     </ul>
                                 </div>

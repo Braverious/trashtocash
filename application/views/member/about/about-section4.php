@@ -5,7 +5,7 @@
                 <div class="heading-subtitle"><span class="tx-primary tx-16 fw-semibold">Tim Kami</span>
                 </div>
                 <div class="heading-title">Anggota Tim <span class="tx-primary">Eksekutif Kami</span></div>
-                <div class="heading-description">Pengembang Inti Recyloop</div>
+                <div class="heading-description">Pengembang Inti TrashtoCash</div>
             </div>
         </div>
         <div class="row">

@@ -11,7 +11,7 @@ class Home extends CI_Controller
 
     public function index()
     {
-        $data['judul'] = 'Recyloop.id';
+        $data['judul'] = 'TrashtoCash.id';
         $data = [
             'limbah' => $this->LimbahModel->getLimbah(),
             'bp' => $this->LimbahModel->getLimbahById(1),
