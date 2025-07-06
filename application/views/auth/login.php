@@ -20,7 +20,6 @@
 </style>
 
 <div class="container">
-    <!-- Outer Row -->
     <div class="row justify-content-center">
         <div class="col-lg-7">
             <div class="container" style="margin-top: 7vh; width: 80%; opacity: 94%;">
@@ -49,7 +48,7 @@
                                         </div>
                                         <input style="border-radius: 0px 5px 5px 0px; border: 0px; background: #262E49; color: #23C78D;" type="text" class="form-control form-control-user" id="username" name="username" placeholder="Masukkan Username" value="<?= set_value('username') ?>">
                                     </div>
-                                    <?= form_error('username', '<small class="text-danger">', '</small'); ?>
+                                    <?= form_error('username', '<small class="text-danger">', '</small>'); ?>
                                 </div>
                                 <div class="form-group">
                                     <p> Password </p>
@@ -61,9 +60,14 @@
                                         </div>
                                         <input style="border-radius: 0px 5px 5px 0px; border: 0px; background: #262E49; color: #23C78D;" type="password" class="form-control form-control-user" id="password" name="password" placeholder="Masukkan Password">
                                     </div>
-                                    <?= form_error('password', '<small class="text-danger">', '</small'); ?>
+                                    <?= form_error('password', '<small class="text-danger">', '</small>'); ?>
                                 </div>
-                                <button type="submit" class="btn btn-success btn-user mt-5 btn-block">
+
+                                <div class="form-group mt-3 d-flex justify-content-center">
+                                    <div class="g-recaptcha" data-sitekey="<?= $site_key; ?>"></div>
+                                </div>
+                                <?= form_error('g-recaptcha-response', '<small class="text-danger text-center d-block">', '</small>'); ?>
+                                <button type="submit" class="btn btn-success btn-user mt-4 btn-block">
                                     Masuk
                                 </button>
                             </form>
@@ -71,11 +75,13 @@
                             <div class="row" style="display: flex; justify-content: center">
                                 <div class="text-center m-2">
                                     <a style="text-decoration: none;" class="small" href="<?= base_url('auth/register'); ?>">
-                                        Register </a>
+                                        Register
+                                    </a>
                                 </div>
                                 <div class="text-center m-2">
                                     <a style="text-decoration: none;" class="small" href="<?= base_url('home'); ?>">
-                                        Kembali </a>
+                                        Kembali
+                                    </a>
                                 </div>
                             </div>
                         </div>

@@ -22,14 +22,37 @@ class Auth extends CI_Controller
 
         $this->form_validation->set_rules('username', 'Username', 'trim|required');
         $this->form_validation->set_rules('password', 'Password', 'trim|required');
+        
+        // Aturan validasi untuk reCAPTCHA
+        $this->form_validation->set_rules('g-recaptcha-response', 'Captcha', 'required|callback_validate_captcha');
+        $this->form_validation->set_message('required', 'Mohon centang kotak "I\'m not a robot".');
+
 
         if ($this->form_validation->run() == FALSE) {
             $data['judul'] = 'Masuk';
+            $data['site_key'] = $this->config->item('google_recaptcha_site_key');
 
             $this->load->view('templates/auth_header', $data);
             $this->load->view('auth/login', $data);
         } else {
             $this->_login();
+        }
+    }
+    
+    public function validate_captcha()
+    {
+        $secret_key = $this->config->item('google_recaptcha_secret_key');
+        $response = $this->input->post('g-recaptcha-response');
+        
+        $verify_url = 'https://www.google.com/recaptcha/api/siteverify?secret=' . $secret_key . '&response=' . $response;
+        
+        $response_data = json_decode(file_get_contents($verify_url));
+
+        if ($response_data->success) {
+            return TRUE;
+        } else {
+            $this->form_validation->set_message('validate_captcha', 'Verifikasi reCAPTCHA gagal. Silakan coba lagi.');
+            return FALSE;
         }
     }
 
@@ -43,7 +66,6 @@ class Auth extends CI_Controller
         $username = $this->input->post('username');
         $password = $this->input->post('password');
 
-        // Tambahkan kolom 'alasan_ban' dalam query
         $user = $this->db->get_where('user', ['username' => $username])->row_array();
 
         if ($user) {
@@ -68,7 +90,6 @@ class Auth extends CI_Controller
                     redirect('auth');
                 }
             } else {
-                // Ambil nilai alasan_ban
                 $alasan_ban = $user['alasan_ban'];
                 $this->session->set_flashdata('message', '<div class="alert alert-danger" role="alert">Akun anda terkena blokir dengan alasan: <b>' . $alasan_ban . '.</b><br> Silakan hubungi Staff kami!</div>');
                 redirect('auth');
