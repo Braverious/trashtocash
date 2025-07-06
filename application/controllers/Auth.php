@@ -22,7 +22,7 @@ class Auth extends CI_Controller
 
         $this->form_validation->set_rules('username', 'Username', 'trim|required');
         $this->form_validation->set_rules('password', 'Password', 'trim|required');
-        
+
         // Aturan validasi untuk reCAPTCHA
         $this->form_validation->set_rules('g-recaptcha-response', 'Captcha', 'required|callback_validate_captcha');
         $this->form_validation->set_message('required', 'Mohon centang kotak "I\'m not a robot".');
@@ -38,14 +38,14 @@ class Auth extends CI_Controller
             $this->_login();
         }
     }
-    
+
     public function validate_captcha()
     {
         $secret_key = $this->config->item('google_recaptcha_secret_key');
         $response = $this->input->post('g-recaptcha-response');
-        
+
         $verify_url = 'https://www.google.com/recaptcha/api/siteverify?secret=' . $secret_key . '&response=' . $response;
-        
+
         $response_data = json_decode(file_get_contents($verify_url));
 
         if ($response_data->success) {
@@ -134,9 +134,11 @@ class Auth extends CI_Controller
             'is_unique'   => 'No. telp sudah dipakai, mohon gunakan no. telp yang lain.'
         ]);
 
-        $this->form_validation->set_rules('alamat', 'Alamat', 'required', [
-            'required' => 'Masukkan alamat dengan benar.'
-        ]);
+        $this->form_validation->set_rules('provinsi', 'Provinsi', 'required', ['required' => 'Provinsi wajib dipilih.']);
+        $this->form_validation->set_rules('kota', 'Kota/Kabupaten', 'required', ['required' => 'Kota/Kabupaten wajib dipilih.']);
+        $this->form_validation->set_rules('kecamatan', 'Kecamatan', 'required', ['required' => 'Kecamatan wajib dipilih.']);
+        $this->form_validation->set_rules('alamat', 'Alamat Lengkap', 'required', ['required' => 'Alamat lengkap wajib diisi.']);
+
 
         if ($this->form_validation->run() == FALSE) {
             $data['judul'] = 'Register';
@@ -146,6 +148,15 @@ class Auth extends CI_Controller
             $this->load->view('templates/auth_footer');
         } else {
             $id_member = str_pad(random_int(0, 99999999), 8, '0', STR_PAD_LEFT);
+            $provinsi_data = explode('|', $this->input->post('provinsi'));
+            $kota_data = explode('|', $this->input->post('kota'));
+            $kecamatan_data = explode('|', $this->input->post('kecamatan'));
+
+            $alamat_lengkap = htmlspecialchars($this->input->post('alamat_detail', true)) . ", " .
+                $kecamatan_data[1] . ", " .
+                $kota_data[1] . ", " .
+                $provinsi_data[1];
+
             $data = [
                 'id_member'    => htmlspecialchars($id_member),
                 'nama'         => htmlspecialchars($this->input->post('nama', true)),
@@ -156,7 +167,7 @@ class Auth extends CI_Controller
                 'role_id'      => 3,
                 'photo'        => 'default.jpg',
                 'no_telp'      => $this->input->post('notelp'),
-                'alamat'       => $this->input->post('alamat'),
+                'alamat'       => $alamat_lengkap,
                 'total_sampah' => 0,
                 'total_koin'   => 0,
                 'date_created' => time(),
