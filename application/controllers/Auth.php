@@ -151,8 +151,7 @@ class Auth extends CI_Controller
             $provinsi_data = explode('|', $this->input->post('provinsi'));
             $kota_data = explode('|', $this->input->post('kota'));
             $kecamatan_data = explode('|', $this->input->post('kecamatan'));
-
-            $alamat_lengkap = htmlspecialchars($this->input->post('alamat_detail', true)) . ", " .
+            $alamat_lengkap = htmlspecialchars($this->input->post('alamat', true)) . ", " .
                 $kecamatan_data[1] . ", " .
                 $kota_data[1] . ", " .
                 $provinsi_data[1];

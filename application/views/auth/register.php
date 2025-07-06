@@ -265,30 +265,23 @@
                                                 <?= form_error('alamat', '<small class="text-danger">', '</small>'); ?>
                                             </div>
                                         </div>
-                                        <!-- <div class="form-group">
-                                        <label for="alamat">Alamat Lengkap</label>
-                                        <input
-                                            style="border-radius: 5px; border: 0px; background: #262E49; color: #23C78D;"
-                                            type="text" class="form-control form-control-user" id="alamat" name="alamat"
-                                            placeholder="Nama Jalan, No. Rumah, RT/RW" value="<?= set_value('alamat') ?>">
-                                        <?= form_error('alamat', '<small class="text-danger">', '</small>'); ?>
-                                    </div> -->
                                     </div>
                                 </div>
                                 <button type="submit" class="btn btn-success btn-user mt-3 btn-block">
                                     Register
                                 </button>
                             </form>
-
                             <hr>
                             <div class="col-md-12" style="display: flex; justify-content: center">
                                 <div class="text-center m-2">
                                     <a style="text-decoration: none;" class="small" href="<?= base_url('auth'); ?>">
-                                        Login </a>
+                                        Login
+                                    </a>
                                 </div>
                                 <div class="text-center m-2">
                                     <a style="text-decoration: none;" class="small" href="<?= base_url('home'); ?>">
-                                        Kembali </a>
+                                        Kembali
+                                    </a>
                                 </div>
                             </div>
                         </div>
@@ -297,7 +290,6 @@
             </div>
         </div>
     </div>
-
     <script type="text/javascript">
         window.setTimeout(function() {
             if (window.jQuery) {
@@ -307,7 +299,6 @@
             }
         }, 2000);
     </script>
-
     <script>
         const observer = new IntersectionObserver((entries) => {
             entries.forEach((entry) => {
@@ -323,8 +314,6 @@
         const hiddenElements = document.querySelectorAll('.row');
         hiddenElements.forEach((el) => observer.observe(el));
     </script>
-
-
     <script>
         document.addEventListener('DOMContentLoaded', function() {
 
